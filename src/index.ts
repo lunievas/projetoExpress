@@ -16,7 +16,7 @@ const main = async () => {
     const getUsersController = new GetUsersController(mongoGetUsersRepository);
 
     const { body, statusCode } = await getUsersController.handle();
-    res.send(body).status(statusCode);
+    res.status(statusCode).send(body);
   });
 
   const port = process.env.PORT || 8000;
